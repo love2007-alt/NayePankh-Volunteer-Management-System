@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Volunteer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Volunteer Registration</h1>
+
+        <form method="POST">
+            <input type="text" name="name" placeholder="Full Name" required>
+
+            <input type="email" name="email" placeholder="Email Address" required>
+
+            <input type="text" name="phone" placeholder="Phone Number" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

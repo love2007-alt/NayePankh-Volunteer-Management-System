@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Volunteers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Registered Volunteers</h1>
+        <form action="/search" method="GET" class="search-box">
+    <input type="text" name="query" placeholder="Search volunteer by name">
+    <button type="submit">Search</button>
+</form>
+        <h3>Total Volunteers: {{ total }}</h3>
+
+        {% if volunteers|length == 0 %}
+<h3>No volunteers found</h3>
+{% endif %}
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+
+            {% for volunteer in volunteers %}
+            <tr>
+                <td>{{ volunteer.name }}</td>
+                <td>{{ volunteer.email }}</td>
+                <td>{{ volunteer.phone }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>
